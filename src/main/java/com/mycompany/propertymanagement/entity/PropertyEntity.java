@@ -22,4 +22,8 @@ public class PropertyEntity {
     private String ownerEmail;
     private String price;
     private String address;
+    @ManyToOne(fetch = FetchType.EAGER)//It will not fetch the user while fetching the property.
+    //By default the fetch type is lazy
+    @JoinColumn(name="USER_ID", nullable = false)
+    private UserEntity userEntity;
 }

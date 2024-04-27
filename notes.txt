@@ -7,4 +7,5 @@ git branch -M main
 git remote add origin git@github.com:MounikaSika08/GitTest.git
 git push -u origin main
 
-Test
+For * -> one relationship, default fetch is FetchType.Eager. Eager means while the parent data is fetched, the child data is fetched as well.
+For one -> *, default fetch is FetchType.Lazy.

@@ -14,6 +14,8 @@ public interface PropertyService {
 
     List<PropertyDTO> getAllProperties();
 
+    List<PropertyDTO> getAllPropertiesForUser(Long userId);
+
     PropertyDTO updateProperty(PropertyDTO dto, Long propertyId);
 
     PropertyDTO updatePropertyDescription(@RequestBody PropertyDTO dto, @PathVariable Long id);

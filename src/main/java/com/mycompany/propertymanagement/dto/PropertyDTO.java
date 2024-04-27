@@ -14,6 +14,7 @@ public class PropertyDTO {
     //private String ownerEmail;
     private String price;
     private String address;
+    private Long userId;
     /*public String getTitle() {
         return title;
     }

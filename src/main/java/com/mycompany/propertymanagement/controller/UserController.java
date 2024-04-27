@@ -8,10 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -33,6 +32,13 @@ public class UserController {
     public ResponseEntity<UserDTO> login(@Valid @RequestBody UserDTO userDto){
         UserDTO dto = service.login(userDto.getOwnerEmail(), userDto.getPassword());
         ResponseEntity<UserDTO> response = new ResponseEntity<>(dto, HttpStatus.CREATED);
+        return response;
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<UserDTO>> getAll(){
+        List<UserDTO> list = service.getAll();
+        ResponseEntity<List<UserDTO>> response = new ResponseEntity<>(list, HttpStatus.OK);
         return response;
     }
 }
